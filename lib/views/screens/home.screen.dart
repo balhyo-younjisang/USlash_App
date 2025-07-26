@@ -1,3 +1,5 @@
+import 'package:app/views/screens/bookmark.screen.dart';
+import 'package:app/views/widgets/homeContent.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/ph.dart';
@@ -14,13 +16,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   static const List<Widget> _widgetOptions = <Widget>[
-    Text('Index 0: 카테고리'),
-    Text('Index 0: Home'),
-    Text('Index 1: Search'),
-    Text('Index 2: Profile'),
+    Center(child: Text('Index 0: 카테고리')),
+    HomeContentWidget(),
+    BookmarkScreen(bookmarks: []), // Placeholder for bookmarks
+    Center(child: Text('Index 2: Profile')),
   ];
 
   void _onItemTapped(int index) {
@@ -35,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: size.height * 0.08,
+        toolbarHeight: size.height * 0.125,
         backgroundColor: Colors.transparent,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -124,21 +124,6 @@ class RegisterScreenState extends State<RegisterScreen> {
                           ),
                         ),
                         SizedBox(width: 10),
-                        SizedBox(
-                          width: size.width * 0.2,
-                          child: ColoredTextButton(
-                            width: size.width * 0.02,
-                            height: size.height * 0.05,
-                            pressHandler: _isIdValid ? () => {} : () {},
-                            text: "중복확인",
-                            color: _isIdValid
-                                ? Colors.white
-                                : const Color.fromRGBO(189, 189, 189, 1),
-                            backgroundColor: _isIdValid
-                                ? Theme.of(context).primaryColor
-                                : const Color.fromRGBO(245, 245, 245, 1),
-                          ),
-                        ),
                       ],
                     ),
                   ],
@@ -329,22 +314,6 @@ class RegisterScreenState extends State<RegisterScreen> {
                                 return null;
                               },
                             ),
-                          ),
-                        ),
-                        SizedBox(width: 10),
-                        SizedBox(
-                          width: size.width * 0.3,
-                          child: ColoredTextButton(
-                            width: size.width * 0.02,
-                            height: size.height * 0.05,
-                            pressHandler: _isPhoneValid ? () => {} : () {},
-                            text: "인증번호 받기",
-                            color: _isPhoneValid
-                                ? Colors.white
-                                : const Color.fromRGBO(189, 189, 189, 1),
-                            backgroundColor: _isPhoneValid
-                                ? Theme.of(context).primaryColor
-                                : const Color.fromRGBO(245, 245, 245, 1),
                           ),
                         ),
                       ],

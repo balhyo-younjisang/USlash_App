@@ -9,11 +9,13 @@ class ColoredTextButton extends StatelessWidget {
     required this.backgroundColor,
     this.height,
     this.width,
+    this.borderColor,
   });
   final VoidCallback pressHandler;
   final String text;
   final Color color;
   final Color backgroundColor;
+  final Color? borderColor;
   final double? height;
   final double? width;
 
@@ -30,6 +32,14 @@ class ColoredTextButton extends StatelessWidget {
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
           ),
           backgroundColor: WidgetStateProperty.all<Color>(backgroundColor),
+          side: WidgetStateProperty.resolveWith<BorderSide?>((
+            Set<WidgetState> states,
+          ) {
+            if (borderColor != null) {
+              return BorderSide(color: borderColor!);
+            }
+            return null;
+          }),
         ),
         child: Text(text, style: TextStyle(color: color)),
       ),
